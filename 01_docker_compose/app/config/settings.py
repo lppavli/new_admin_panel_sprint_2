@@ -3,6 +3,7 @@ from pathlib import Path
 import environ
 from dotenv import load_dotenv
 from django.utils.translation import gettext_lazy as _
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env.dev'))
@@ -97,8 +98,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
-    # 'DEFAULT_PAGINATION_CLASS': 'config.helpers.pagination.ProjectPagination',
-    # 'PAGE_SIZE': 50,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 50
 }
 
 LOGGING = {

@@ -4,7 +4,14 @@ from ...models import Filmwork
 
 
 class MovieSerializer(serializers.ModelSerializer):
-    """Список фильмов"""
+    genres = serializers.ListSerializer(
+        child=serializers.CharField(
+            source='genre.name'
+        )
+    )
+    actors = serializers.ListSerializer(child=serializers.CharField())
+    directors = serializers.ListSerializer(child=serializers.CharField())
+    writers = serializers.ListSerializer(child=serializers.CharField())
 
     class Meta:
         model = Filmwork
@@ -16,5 +23,7 @@ class MovieSerializer(serializers.ModelSerializer):
             'rating',
             'type',
             'genres',
-            'persons'
+            'actors',
+            'directors',
+            'writers',
         )
