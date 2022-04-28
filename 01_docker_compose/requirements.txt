@@ -65,3 +65,4 @@ typing_extensions==4.1.1
 tzdata==2022.1
 virtualenv==20.13.4
 wemake-python-styleguide==0.16.1
+djangorestframework
