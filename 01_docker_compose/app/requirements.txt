@@ -1,10 +1,10 @@
 Django==3.2.6
 psycopg2-binary==2.9.1
-gunicorn
-django-split-settings
-python-dotenv
+gunicorn==20.1.0
+django-split-settings==1.1.0
+python-dotenv==0.20.0
 django-environ==0.8.1
-djangorestframework
-markdown
-django-filter
-drf-yasg
+djangorestframework==3.13.1
+markdown==3.3.6
+django-filter==21.1
+drf-yasg==1.20.0

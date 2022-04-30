@@ -13,3 +13,9 @@ translation:
     django-admin makemessages -l ru
 translate:
     django-admin compilemessages -l ru
+flush:
+    python manage.py flush --no-input
+migrate:
+    python manage.py migrate
+static:
+    python manage.py collectstatic

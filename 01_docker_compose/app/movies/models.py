@@ -88,11 +88,13 @@ class Person(UUIDMixin, TimeStampedMixin):
         verbose_name_plural = _('Persons')
 
 
+class Role(models.TextChoices):
+    DIRECTOR = 'director', _('Director')
+    WRITER = 'writer', _('Writer')
+    ACTOR = 'actor', _('actor')
+
+
 class PersonFilmWork(models.Model):
-    class Role(models.TextChoices):
-        DIRECTOR = 'director', _('Director')
-        WRITER = 'writer', _('Writer')
-        ACTOR = 'actor', _('actor')
     film_work = models.ForeignKey('Filmwork', on_delete=models.CASCADE)
     person = models.ForeignKey('Person', on_delete=models.CASCADE)
     role = models.CharField(max_length=10,
